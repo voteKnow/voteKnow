@@ -1,23 +1,72 @@
 package com.theironyard.entities;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /*
  * Created by jeffryporter on 5/22/16.
  */
+@Entity
+@Table(name = "politicians")
 public class Politician
 {
     //declare variables
+    @Id
+    @GeneratedValue
+    private int id;
+
+    @Column(nullable = false)
     private String name;
+
     private String profilePictureLocation;
+
+    @Column(nullable = false)
     private String partyAffiliation;
+
+    @Column(nullable = false)
     private boolean currentlyHoldingOffice;
+
+    @Column(nullable = false)
     private String position;
+
+    @Column(nullable = false)
     private ArrayList<String> previousPositions;
+
+    @Column(nullable = false)
     private int age;
+
+    @Column(nullable = false)
     private int yearsInPolitics;
+
+    @Column(nullable = false)
     private HashMap<String, Boolean> votingRecord;
+
+    public Politician()
+    {
+    }
+
+    public Politician(String name, String partyAffiliation, boolean currentlyHoldingOffice, String position, ArrayList<String> previousPositions, int age, int yearsInPolitics, HashMap<String, Boolean> votingRecord)
+    {
+        this.name = name;
+        this.partyAffiliation = partyAffiliation;
+        this.currentlyHoldingOffice = currentlyHoldingOffice;
+        this.position = position;
+        this.previousPositions = previousPositions;
+        this.age = age;
+        this.yearsInPolitics = yearsInPolitics;
+        this.votingRecord = votingRecord;
+    }
+
+    public int getId()
+    {
+        return id;
+    }
+
+    public void setId(int id)
+    {
+        this.id = id;
+    }
 
     public String getName()
     {
@@ -96,7 +145,7 @@ public class Politician
 
     public void setYearsInPolitics(int yearsInPolitics)
     {
-        yearsInPolitics = yearsInPolitics;
+        this.yearsInPolitics = yearsInPolitics;
     }
 
     public HashMap<String, Boolean> getVotingRecord()
@@ -108,7 +157,4 @@ public class Politician
     {
         this.votingRecord = votingRecord;
     }
-
 }
-
-
