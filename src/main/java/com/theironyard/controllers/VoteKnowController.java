@@ -71,7 +71,7 @@ public class VoteKnowController
         return"";
     }
 
-    //"deletes" an item.  item is kept in database, but is not visible anymore.
+    //"deletes" a bill.  bill is kept in database, but is not visible anymore.
     @RequestMapping(path = "/bill-delete", method = RequestMethod.POST)
     public String deleteBill (int id, HttpServletRequest request)
     {
@@ -103,7 +103,7 @@ public class VoteKnowController
         return politician;
     }
 
-    //shows all bills
+    //shows all politician
     @RequestMapping(path = "/politician-read", method = RequestMethod.GET)
     public Iterable<Politician> getPolitician()
     {
@@ -111,7 +111,7 @@ public class VoteKnowController
         return politicianList;
     }
 
-    //updates a bill
+    //updates a politician
     @RequestMapping(path = "/politician-update", method = RequestMethod.POST)
     public String updatePolitician(int id, String name, String partyAffiliation, boolean currentlyHoldingOffice, String position, ArrayList<String> previousPositions, int age, int yearsInPolitics, HashMap<String, Boolean> votingRecord)
     {
@@ -121,7 +121,7 @@ public class VoteKnowController
         return"";
     }
 
-    //"deletes" an item.  item is kept in database, but is not visible anymore.
+    //"deletes"  a politician.  item is kept in database, but is not visible anymore.
     @RequestMapping(path = "/politician-delete", method = RequestMethod.POST)
     public String deletePolitician (int id, HttpServletRequest request)
     {
