@@ -11,6 +11,13 @@ import java.util.HashMap;
 @Table(name = "politicians")
 public class Politician
 {
+    public enum Level
+    {
+        FEDERAL,
+        STATE,
+        LOCAL
+    }
+
     //declare variables
     @Id
     @GeneratedValue
@@ -46,15 +53,13 @@ public class Politician
     private String region;
 
     @Column(nullable = false)
-    private Enum level;
+    @Enumerated(EnumType.ORDINAL)
+    private Level level;
 
-    public Politician()
-    {
-    }
-
-    public Politician(String name, String partyAffiliation, boolean currentlyHoldingOffice, String position, ArrayList<String> previousPositions, int age, int yearsInPolitics, HashMap<String, Boolean> votingRecord)
+    public Politician(String name, String profilePictureLocation, String partyAffiliation, boolean currentlyHoldingOffice, String position, ArrayList<String> previousPositions, int age, int yearsInPolitics, HashMap<String, Boolean> votingRecord, String region, Level level)
     {
         this.name = name;
+        this.profilePictureLocation = profilePictureLocation;
         this.partyAffiliation = partyAffiliation;
         this.currentlyHoldingOffice = currentlyHoldingOffice;
         this.position = position;
@@ -62,6 +67,8 @@ public class Politician
         this.age = age;
         this.yearsInPolitics = yearsInPolitics;
         this.votingRecord = votingRecord;
+        this.region = region;
+        this.level = level;
     }
 
     public int getId()
@@ -162,5 +169,25 @@ public class Politician
     public void setVotingRecord(HashMap<String, Boolean> votingRecord)
     {
         this.votingRecord = votingRecord;
+    }
+
+    public Level getLevel()
+    {
+        return level;
+    }
+
+    public void setLevel(Level level)
+    {
+        this.level = level;
+    }
+
+    public String getRegion()
+    {
+        return region;
+    }
+
+    public void setRegion(String region)
+    {
+        this.region = region;
     }
 }
