@@ -42,6 +42,12 @@ public class Politician
     @Column(nullable = false)
     private HashMap<String, Boolean> votingRecord;
 
+    @Column(nullable = false)
+    private String region;
+
+    @Column(nullable = false)
+    private Enum level;
+
     public Politician()
     {
     }
