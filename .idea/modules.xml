@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/voteKnow.iml" filepath="$PROJECT_DIR$/.idea/modules/voteKnow.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/voteKnow_main.iml" filepath="$PROJECT_DIR$/.idea/modules/voteKnow_main.iml" group="voteKnow" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/voteKnow_test.iml" filepath="$PROJECT_DIR$/.idea/modules/voteKnow_test.iml" group="voteKnow" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/voteKnow-1.iml" filepath="$PROJECT_DIR$/.idea/modules/voteKnow-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/voteKnow-1_main.iml" filepath="$PROJECT_DIR$/.idea/modules/voteKnow-1_main.iml" group="voteKnow-1" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/voteKnow-1_test.iml" filepath="$PROJECT_DIR$/.idea/modules/voteKnow-1_test.iml" group="voteKnow-1" />
     </modules>
   </component>
 </project>
