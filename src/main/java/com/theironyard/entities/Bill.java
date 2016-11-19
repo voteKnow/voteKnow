@@ -37,6 +37,12 @@ public class Bill
     @Column(nullable = false)
     private String billSynopsis;
 
+    @Column(nullable = false)
+    private String region;
+
+    @Column(nullable = false)
+    private Enum level;
+
     private ArrayList<String> amendments;
 
     private ArrayList<String> amendmentSynopsis;

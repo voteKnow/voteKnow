@@ -8,4 +8,5 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface PoliticianRepository extends CrudRepository<Politician, Integer>
 {
+    Iterable findPoliticianByLevelAndRegion(Enum level, String region);
 }

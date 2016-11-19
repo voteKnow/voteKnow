@@ -8,4 +8,5 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface BillRepository extends CrudRepository<Bill, Integer>
 {
+    Iterable findBillByLevelAndRegion(Enum level, String region);
 }
