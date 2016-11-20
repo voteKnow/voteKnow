@@ -12,6 +12,13 @@ import java.util.Date;
 @Table(name = "bills")
 public class Bill
 {
+    public enum Level
+    {
+        FEDERAL,
+        STATE,
+        LOCAL
+    }
+
     @Id
     @GeneratedValue
     private int id;
@@ -41,7 +48,8 @@ public class Bill
     private String region;
 
     @Column(nullable = false)
-    private Enum level;
+    @Enumerated(EnumType.ORDINAL)
+    private Level level;
 
     private ArrayList<String> amendments;
 
@@ -53,7 +61,7 @@ public class Bill
     {
     }
 
-    public Bill(String referenceNumber, String billName, Date dateSubmitted, Date dateUpForVote, String billCreators, String billBody, String billSynopsis)
+    public Bill(String referenceNumber, String billName, Date dateSubmitted, Date dateUpForVote, String billCreators, String billBody, String billSynopsis, String region, Level level, ArrayList<String> amendments, ArrayList<String> amendmentSynopsis, ArrayList<ArrayList<String>> amendmentCreators)
     {
         this.referenceNumber = referenceNumber;
         this.billName = billName;
@@ -62,6 +70,11 @@ public class Bill
         this.billCreators = billCreators;
         this.billBody = billBody;
         this.billSynopsis = billSynopsis;
+        this.region = region;
+        this.level = level;
+        this.amendments = amendments;
+        this.amendmentSynopsis = amendmentSynopsis;
+        this.amendmentCreators = amendmentCreators;
     }
 
     public int getId()
@@ -172,5 +185,25 @@ public class Bill
     public void setAmendmentCreators(ArrayList<ArrayList<String>> amendmentCreators)
     {
         this.amendmentCreators = amendmentCreators;
+    }
+
+    public Level getLevel()
+    {
+        return level;
+    }
+
+    public void setLevel(Level level)
+    {
+        this.level = level;
+    }
+
+    public String getRegion()
+    {
+        return region;
+    }
+
+    public void setRegion(String region)
+    {
+        this.region = region;
     }
 }
