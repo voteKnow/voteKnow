@@ -36,4 +36,19 @@ Current Java variables:
         ArrayList<String> amendmentCreators;
     }
 
+Java defined routes
+
+    /politician       Create - saves a new politician; takes politician JSON, returns politician JSON
+                      Read - takes a level and region, returns Iterable of politician JSON;
+                      Update - updates a politician; takes politician JSON, returns politician JSON
+
+    /politician/{id}  Read - find an individual politician; takes an int ID, returns politician JSON
+                      Delete - removes a politician from the database; takes an int ID, returns politician JSON
+
+    /bill             Create - saves a new bill; takes bill JSON, returns bill JSON
+                      Read - takes a level and region, returns Iterable of bill JSON;
+                      Update - updates a bill; takes bill JSON, returns bill JSON
+
+    /bill/{id}        Read - find an individual bill; takes an int ID, returns bill JSON
+                      Delete - removes a bill from the database; takes an int ID, returns bill JSON
 

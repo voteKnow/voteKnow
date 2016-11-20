@@ -32,21 +32,25 @@ public class VoteKnowRestController
     }
 
     @RequestMapping(path = "/politician", method = RequestMethod.POST)
-    public void addPolitician(@RequestBody Politician politician)
+    public Politician addPolitician(@RequestBody Politician politician)
     {
         politicians.save(politician);
+        return politician;
     }
 
     @RequestMapping(path = "/politician", method = RequestMethod.PUT)
-    public void editPolitician(@RequestBody Politician politician)
+    public Politician editPolitician(@RequestBody Politician politician)
     {
         politicians.save(politician);
+        return politician;
     }
 
     @RequestMapping(path = "/politician/{id}", method = RequestMethod.DELETE)
-    public void deletePolitician(@PathVariable("id") int id)
+    public Politician deletePolitician(@PathVariable("id") int id)
     {
+        Politician politician = politicians.findOne(id);
         politicians.delete(id);
+        return politician;
     }
 
     @RequestMapping(path = "/politician/{id}", method = RequestMethod.GET)
@@ -69,21 +73,25 @@ public class VoteKnowRestController
     }
 
     @RequestMapping(path = "/bills", method = RequestMethod.POST)
-    public void addBill(@RequestBody Bill appointment)
+    public Bill addBill(@RequestBody Bill bill)
     {
-        bills.save(appointment);
+        bills.save(bill);
+        return bill;
     }
 
     @RequestMapping(path = "/bills", method = RequestMethod.PUT)
-    public void editBill(@RequestBody Bill bill)
+    public Bill editBill(@RequestBody Bill bill)
     {
         bills.save(bill);
+        return bill;
     }
 
     @RequestMapping(path = "/bill/{id}", method = RequestMethod.DELETE)
-    public void deleteBill(@PathVariable("id") int id)
+    public Bill deleteBill(@PathVariable("id") int id)
     {
+        Bill bill = bills.findOne(id);
         bills.delete(id);
+        return bill;
     }
 
     @RequestMapping(path = "/bill/{id}", method = RequestMethod.GET)
