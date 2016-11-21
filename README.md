@@ -51,4 +51,3 @@ Java defined routes
 
     /bill/{id}        Read - find an individual bill; takes an int ID, returns bill JSON
                       Delete - removes a bill from the database; takes an int ID, returns bill JSON
-
