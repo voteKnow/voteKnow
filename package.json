@@ -1,0 +1,28 @@
+{
+  "name": "voteknow",
+  "version": "1.0.0",
+  "description": "web app that helps to educate voters",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voteKnow/voteKnow.git"
+  },
+  "keywords": [
+    "politics"
+  ],
+  "author": "Jeff Porter, Riggan Hart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/voteKnow/voteKnow/issues"
+  },
+  "homepage": "https://github.com/voteKnow/voteKnow#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-watch": "^4.3.11"
+  }
+}

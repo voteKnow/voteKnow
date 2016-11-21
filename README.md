@@ -51,4 +51,21 @@ Java defined routes
 
     /bill/{id}        Read - find an individual bill; takes an int ID, returns bill JSON
                       Delete - removes a bill from the database; takes an int ID, returns bill JSON
+                     
+Front End Build System:
 
+   Install npm dependencies listed in package.json from command line:
+   
+            cd voteKnow 
+            npm install
+   
+   All work should be in the frontend directory:
+   
+            cd frontend
+    
+   Run gulp in the frontend directory to output to public directory. This watches for any changes and will throw errors if something is not right:
+   
+             gulp
+
+
+    
