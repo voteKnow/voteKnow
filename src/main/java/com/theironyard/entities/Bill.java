@@ -51,18 +51,15 @@ public class Bill
     @Enumerated(EnumType.ORDINAL)
     private Level level;
 
-    private ArrayList<String> amendments;
-
-    private ArrayList<String> amendmentSynopsis;
-
-    private ArrayList<ArrayList<String>> amendmentCreators;
+    private ArrayList<Amendment> amendments;
 
     public Bill()
     {
     }
 
-    public Bill(String referenceNumber, String billName, Date dateSubmitted, Date dateUpForVote, String billCreators, String billBody, String billSynopsis, String region, Level level, ArrayList<String> amendments, ArrayList<String> amendmentSynopsis, ArrayList<ArrayList<String>> amendmentCreators)
+    public Bill(int id, String referenceNumber, String billName, Date dateSubmitted, Date dateUpForVote, String billCreators, String billBody, String billSynopsis, String region, Level level, ArrayList<Amendment> amendments)
     {
+        this.id = id;
         this.referenceNumber = referenceNumber;
         this.billName = billName;
         this.dateSubmitted = dateSubmitted;
@@ -73,8 +70,6 @@ public class Bill
         this.region = region;
         this.level = level;
         this.amendments = amendments;
-        this.amendmentSynopsis = amendmentSynopsis;
-        this.amendmentCreators = amendmentCreators;
     }
 
     public int getId()
@@ -157,34 +152,14 @@ public class Bill
         this.billSynopsis = billSynopsis;
     }
 
-    public ArrayList<String> getAmendments()
+    public ArrayList<Amendment> getAmendments()
     {
         return amendments;
     }
 
-    public void setAmendments(ArrayList<String> amendments)
+    public void setAmendments(ArrayList<Amendment> amendments)
     {
         this.amendments = amendments;
-    }
-
-    public ArrayList<String> getAmendmentSynopsis()
-    {
-        return amendmentSynopsis;
-    }
-
-    public void setAmendmentSynopsis(ArrayList<String> amendmentSynopsis)
-    {
-        this.amendmentSynopsis = amendmentSynopsis;
-    }
-
-    public ArrayList<ArrayList<String>> getAmendmentCreators()
-    {
-        return amendmentCreators;
-    }
-
-    public void setAmendmentCreators(ArrayList<ArrayList<String>> amendmentCreators)
-    {
-        this.amendmentCreators = amendmentCreators;
     }
 
     public Level getLevel()
