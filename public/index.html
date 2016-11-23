@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='voteKnow'>
   <head>
     <meta charset="utf-8">
     <title>VoteKnow | Undbiased Education</title>
     <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
 
+    <!-- Angular 1.5.7 CDN with angular-route -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-route.js"></script>
 
     <!-- Custom JS -->
-    <script type="text/javascript" src="/js/main.js">
-
-    </script>
+    <script type="text/javascript" src="/js/main.js"></script>
   </head>
   <body>
 
+    <!-- Angular Router Views -->
+    <main ng-view></main>
   </body>
 </html>
