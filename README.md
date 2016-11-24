@@ -23,17 +23,24 @@ Current Java variables:
     {
         int id;
         String referenceNumber;
-        String billName;
+        String name;
         Date dateSubmitted;
         Date dateUpForVote;
-        String billCreators;
-        String billBody;
-        String billSynopsis;
+        ArrayList<String> creators;
+        String body;
+        String synopsis;
         enum Level level;
         String region;
-        ArrayList<String> amendments;
-        ArrayList<String> amendmentSynopsis;
-        ArrayList<String> amendmentCreators;
+        ArrayList<Amendment> amendments;
+    }
+
+    Amendment
+    {
+        int id;
+        String title;
+        String body;
+        String synopsis;
+        ArrayList<String> creators;
     }
 
 Java defined routes

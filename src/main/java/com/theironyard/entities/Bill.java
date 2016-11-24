@@ -27,7 +27,7 @@ public class Bill
     private String referenceNumber;
 
     @Column(nullable = false)
-    private String billName;
+    private String name;
 
     @Column(nullable = false)
     private Date dateSubmitted;
@@ -36,13 +36,13 @@ public class Bill
     private Date dateUpForVote;
 
     @Column(nullable = false)
-    private String billCreators;
+    private ArrayList<String> creators;
 
     @Column(nullable = false)
-    private String billBody;
+    private String body;
 
     @Column(nullable = false)
-    private String billSynopsis;
+    private String synopsis;
 
     @Column(nullable = false)
     private String region;
@@ -57,16 +57,16 @@ public class Bill
     {
     }
 
-    public Bill(int id, String referenceNumber, String billName, Date dateSubmitted, Date dateUpForVote, String billCreators, String billBody, String billSynopsis, String region, Level level, ArrayList<Amendment> amendments)
+    public Bill(int id, String referenceNumber, String name, Date dateSubmitted, Date dateUpForVote, ArrayList<String> creators, String body, String synopsis, String region, Level level, ArrayList<Amendment> amendments)
     {
         this.id = id;
         this.referenceNumber = referenceNumber;
-        this.billName = billName;
+        this.name = name;
         this.dateSubmitted = dateSubmitted;
         this.dateUpForVote = dateUpForVote;
-        this.billCreators = billCreators;
-        this.billBody = billBody;
-        this.billSynopsis = billSynopsis;
+        this.creators = creators;
+        this.body = body;
+        this.synopsis = synopsis;
         this.region = region;
         this.level = level;
         this.amendments = amendments;
@@ -92,14 +92,14 @@ public class Bill
         this.referenceNumber = referenceNumber;
     }
 
-    public String getBillName()
+    public String getName()
     {
-        return billName;
+        return name;
     }
 
-    public void setBillName(String billName)
+    public void setName(String name)
     {
-        this.billName = billName;
+        this.name = name;
     }
 
     public Date getDateSubmitted()
@@ -122,44 +122,44 @@ public class Bill
         this.dateUpForVote = dateUpForVote;
     }
 
-    public String getBillCreators()
+    public ArrayList<String> getCreators()
     {
-        return billCreators;
+        return creators;
     }
 
-    public void setBillCreators(String billCreators)
+    public void setCreators(ArrayList<String> creators)
     {
-        this.billCreators = billCreators;
+        this.creators = creators;
     }
 
-    public String getBillBody()
+    public String getBody()
     {
-        return billBody;
+        return body;
     }
 
-    public void setBillBody(String billBody)
+    public void setBody(String body)
     {
-        this.billBody = billBody;
+        this.body = body;
     }
 
-    public String getBillSynopsis()
+    public String getSynopsis()
     {
-        return billSynopsis;
+        return synopsis;
     }
 
-    public void setBillSynopsis(String billSynopsis)
+    public void setSynopsis(String synopsis)
     {
-        this.billSynopsis = billSynopsis;
+        this.synopsis = synopsis;
     }
 
-    public ArrayList<Amendment> getAmendments()
+    public String getRegion()
     {
-        return amendments;
+        return region;
     }
 
-    public void setAmendments(ArrayList<Amendment> amendments)
+    public void setRegion(String region)
     {
-        this.amendments = amendments;
+        this.region = region;
     }
 
     public Level getLevel()
@@ -172,13 +172,13 @@ public class Bill
         this.level = level;
     }
 
-    public String getRegion()
+    public ArrayList<Amendment> getAmendments()
     {
-        return region;
+        return amendments;
     }
 
-    public void setRegion(String region)
+    public void setAmendments(ArrayList<Amendment> amendments)
     {
-        this.region = region;
+        this.amendments = amendments;
     }
 }

@@ -1,5 +1,8 @@
 package com.theironyard.entities;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.ArrayList;
 
 /**
@@ -7,14 +10,20 @@ import java.util.ArrayList;
  */
 public class Amendment
 {
+    @Id
+    @GeneratedValue
     private int id;
 
+    @Column(nullable = false)
     private String title;
 
+    @Column(nullable = false)
     private String body;
 
+    @Column(nullable = false)
     private String synopsis;
 
+    @Column(nullable = false)
     private ArrayList<String> creators;
 
     public Amendment()
