@@ -1,10 +1,11 @@
+'use strict'
 let app = angular.module('voteKnow', ['ngRoute']);
 
 // Controllers:
-require('./controllers/homeController')
+require('./controllers/homeController')(app);
 
 // Services:
-
+require('./services/userService')(app);
 
 
 // Router:
